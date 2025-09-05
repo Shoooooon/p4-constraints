@@ -36,6 +36,13 @@ def p4_constraints_deps():
             url = "https://github.com/google/re2/releases/download/2024-02-01/re2-2024-02-01.tar.gz",
             strip_prefix = "re2-2024-02-01",
         )
+    if not native.existing_rule("rules_cc"):
+        http_archive(
+            name = "rules_cc",
+            sha256 = "88661aba2ad049ae0be36eca8222c1911a397c077776aba8efa42b737eaa3152",
+            strip_prefix = "rules_cc-0.2.3",
+            url = "https://github.com/bazelbuild/rules_cc/releases/download/0.2.3/rules_cc-0.2.3.tar.gz",
+        )
     if not native.existing_rule("rules_proto"):
         http_archive(
             name = "rules_proto",
